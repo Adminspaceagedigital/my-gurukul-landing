@@ -12,12 +12,14 @@ import SecuritySection from '@/components/security/SecuritySection';
 import FaqAccordion from '@/components/faq/FaqAccordion';
 import BookingSection from '@/components/cta/BookingSection';
 import Footer from '@/components/layout/Footer';
+import { LightboxProvider } from '@/components/ui/LightboxProvider';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] via-[#f1f7fd] to-[#eaf2fb] text-slate-900 font-sans antialiased overflow-x-hidden">
-      {/* 1. Sticky Glass Navigation */}
-      <Header />
+    <LightboxProvider>
+      <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] via-[#f1f7fd] to-[#eaf2fb] text-slate-900 font-sans antialiased overflow-x-hidden">
+        {/* 1. Sticky Glass Navigation */}
+        <Header />
 
       <main>
         {/* 2. Flagship Hero Section (#home) */}
@@ -57,5 +59,6 @@ export default function LandingPage() {
       {/* 9. Enterprise Institutional Footer */}
       <Footer />
     </div>
+    </LightboxProvider>
   );
 }
