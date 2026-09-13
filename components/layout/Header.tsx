@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,60 +18,51 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home', code: '01' },
-    { name: 'About & Tiers', href: '#about', code: '02' },
-    { name: 'Features', href: '#features', code: '03' },
-    { name: 'Onboard', href: '#onboard', code: '04' },
-    { name: 'Documentation', href: '#documentation', code: '05' },
-    { name: 'Contact', href: '#contact', code: '06' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About & Tiers', href: '/#about' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Onboard', href: '/#onboard' },
+    { name: 'Documentation', href: '/documentation' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
       <div
         className={`max-w-7xl mx-auto rounded-xl transition-all duration-300 flex items-center justify-between px-4 sm:px-6 py-2.5 ${
           scrolled
-            ? 'glass-border shadow-md'
-            : 'bg-white/60 border border-slate-200/60 backdrop-blur-md shadow-xs'
+            ? 'glass-border shadow-md bg-white/85 backdrop-blur-md border border-slate-200/80'
+            : 'bg-transparent border border-transparent shadow-none'
         }`}
       >
-        {/* Brand Logo & Editorial Code */}
-        <Link href="#home" className="flex items-center gap-3 group">
+        {/* Brand Logo Only */}
+        <Link href="#home" className="flex items-center group">
           <Image
             src="/my-gurukul.png"
             alt="My Gurukul"
-            width={70}
-            height={70}
-            className="h-10 md:h-12 w-auto object-contain mix-blend-multiply drop-shadow-xs transition-transform duration-300 group-hover:scale-105"
+            width={100}
+            height={100}
+            className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-xs transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          <div className="hidden sm:flex flex-col border-l border-slate-200 pl-3">
-            <span className="text-[9px] font-mono font-bold tracking-[0.15em] text-slate-400 uppercase">
-              INSTITUTIONAL SUITE
-            </span>
-            <span className="text-[11px] font-bold text-slate-800 tracking-tight">
-              My Gurukul
-            </span>
-          </div>
         </Link>
 
-        {/* Desktop Nav Links (Awwwards numbered menu) */}
-        <nav className="hidden lg:flex items-center gap-1 bg-slate-100/70 p-1 rounded-xl border border-slate-200/60">
+        {/* Desktop Nav Links (Text only, clean) */}
+        <nav className="hidden lg:flex items-center gap-1.5">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-semibold text-slate-600 hover:text-slate-900 px-3 py-1.5 rounded-lg hover:bg-white transition-all flex items-center gap-1.5"
+              className="text-xs font-semibold text-slate-700 hover:text-blue-600 px-3.5 py-1.5 rounded-lg hover:bg-slate-100/70 transition-all"
             >
-              <span className="text-[9px] font-mono text-slate-400 font-normal">{link.code}</span>
-              <span>{link.name}</span>
+              {link.name}
             </a>
           ))}
         </nav>
 
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50/90 border border-emerald-200/80 px-2.5 py-1 rounded-lg backdrop-blur-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             LIVE NETWORK
           </span>
@@ -87,7 +78,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs"
+          className="lg:hidden p-2 rounded-xl border border-slate-200/80 bg-white/90 text-slate-700 shadow-xs backdrop-blur-xs"
           aria-label="Toggle Navigation"
         >
           {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -105,10 +96,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-sm font-semibold text-slate-700 hover:text-blue-700 py-2.5 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between border-b border-slate-100"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-slate-400">{link.code}</span>
-                  <span>{link.name}</span>
-                </div>
+                <span>{link.name}</span>
                 <ArrowUpRight size={14} className="text-slate-400" />
               </a>
             ))}
@@ -127,3 +115,4 @@ export default function Header() {
     </header>
   );
 }
+

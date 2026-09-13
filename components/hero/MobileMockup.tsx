@@ -13,6 +13,8 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 
+import { ZoomableImage } from '@/components/ui/LightboxProvider';
+
 interface MobileMockupProps {
   imageSrc?: string;
 }
@@ -22,7 +24,7 @@ export default function MobileMockup({ imageSrc }: MobileMockupProps) {
     return (
       <div className="w-[280px] sm:w-[310px] mx-auto bg-slate-900 rounded-xl p-2.5 shadow-2xl border border-slate-700">
         <div className="bg-white rounded-lg overflow-hidden border border-slate-200">
-          <img src={imageSrc} alt="Alumni Mobile Portal" className="w-full h-auto object-cover" />
+          <ZoomableImage src={imageSrc} alt="Alumni Mobile Portal" className="w-full h-auto object-cover" />
         </div>
       </div>
     );

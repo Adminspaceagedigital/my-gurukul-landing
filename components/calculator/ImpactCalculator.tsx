@@ -1,148 +1,109 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Calculator, Sparkles, TrendingUp, Handshake, HeartHandshake, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { HeartHandshake, Building, Award, ShieldCheck, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export default function ImpactCalculator() {
-  const [alumniCount, setAlumniCount] = useState<number>(5000);
-  const [avgDonation, setAvgDonation] = useState<number>(2500);
-
-  // Assumptions: 10% active participation rate for annual fund
-  const activeDonors = Math.round(alumniCount * 0.10);
-  const annualAlumniFund = activeDonors * avgDonation;
-  
-  // CSR multiplier: ~35% of total alumni fund generated through corporate matching & CSR referrals
-  const csrPipeline = Math.round(annualAlumniFund * 0.35);
-  const totalEndowment = annualAlumniFund + csrPipeline;
-
-  const formatCurrency = (amount: number) => {
-    if (amount >= 10000000) {
-      return `₹ ${(amount / 10000000).toFixed(2)} Crore`;
-    }
-    if (amount >= 100000) {
-      return `₹ ${(amount / 100000).toFixed(2)} Lakhs`;
-    }
-    return `₹ ${amount.toLocaleString('en-IN')}`;
-  };
+  const benefits = [
+    {
+      icon: HeartHandshake,
+      title: 'Direct Alumni Endowments',
+      description: 'Enable frictionless one-click giving campaigns for scholarships, department funds, and campus development projects.',
+      highlight: 'Automated 80G Tax Receipts',
+      accentColor: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+    },
+    {
+      icon: Building,
+      title: 'Corporate CSR & Grants',
+      description: 'Tap into corporate CSR budgets and employer matching gifts by connecting with alumni working at top enterprises.',
+      highlight: 'Enterprise CSR Pipelines',
+      accentColor: 'text-blue-700 bg-blue-50 border-blue-200',
+    },
+    {
+      icon: Award,
+      title: 'Mentorship & Placements',
+      description: 'Foster student-alumni career guidance, campus recruitment drives, guest lectures, and industry masterclasses.',
+      highlight: 'Lifelong Career Ecosystem',
+      accentColor: 'text-purple-700 bg-purple-50 border-purple-200',
+    },
+  ];
 
   return (
-    <section id="calculator" className="py-20 bg-gradient-to-br from-blue-50/40 via-sky-50/20 to-slate-50 relative">
+    <section id="endowment" className="py-20 bg-slate-50/70 border-t border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-            <Calculator size={13} />
-            <span>Interactive Philanthropy & Endowment Estimator</span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Calculate the Dormant Financial Power of Your Alumni Network
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Unlock the Dormant Financial & Mentorship Power of Your Alumni Network
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 font-medium">
+          <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
             See how much non-tuition endowment capital and corporate CSR grants your institution can unlock with an organized digital ecosystem.
           </p>
         </div>
 
-        {/* Interactive Estimator Canvas */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-xl p-6 sm:p-10 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Sliders (Left 6-7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Slider 1: Total Alumni Base */}
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  Total Graduated Alumni Base
-                </label>
-                <span className="text-sm font-extrabold text-blue-700 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">
-                  {alumniCount.toLocaleString('en-IN')} Graduates
-                </span>
-              </div>
-              <input
-                type="range"
-                min="1000"
-                max="50000"
-                step="1000"
-                value={alumniCount}
-                onChange={(e) => setAlumniCount(Number(e.target.value))}
-                className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                <span>1,000 Alumni</span>
-                <span>25,000</span>
-                <span>50,000+ Alumni</span>
-              </div>
-            </div>
+        {/* 3 Simple Value Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          {benefits.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6 group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 group-hover:bg-[#0A1931] group-hover:text-white transition-all">
+                      <Icon size={22} />
+                    </div>
+                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${item.accentColor}`}>
+                      {item.highlight}
+                    </span>
+                  </div>
 
-            {/* Slider 2: Average Annual Contribution */}
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  Average Annual Giving per Supporter
-                </label>
-                <span className="text-sm font-extrabold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">
-                  ₹ {avgDonation.toLocaleString('en-IN')} / year
-                </span>
-              </div>
-              <input
-                type="range"
-                min="1000"
-                max="15000"
-                step="500"
-                value={avgDonation}
-                onChange={(e) => setAvgDonation(Number(e.target.value))}
-                className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
-              />
-              <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                <span>₹ 1,000</span>
-                <span>₹ 7,500</span>
-                <span>₹ 15,000 / year</span>
-              </div>
-            </div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                    {item.title}
+                  </h3>
 
-            {/* Explanatory notes */}
-            <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1 text-xs text-slate-600">
-              <p className="font-bold text-slate-900">Conservative Industry Modeling:</p>
-              <p className="text-[11px] leading-relaxed">
-                Calculated on a standard <strong>10% active participation rate</strong> of verified alumni plus a <strong>35% corporate CSR matching pipeline</strong> from alumni employers.
-              </p>
-            </div>
-          </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </div>
 
-          {/* Results Output Card (Right 5 cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white p-6 sm:p-7 rounded-xl shadow-xl space-y-5 text-left">
+                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <CheckCircle2 size={15} className="text-emerald-500 shrink-0" />
+                  <span>Integrated with Central Trust Command</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Institutional Trust Compliance Strip */}
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs text-left">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+              <ShieldCheck size={22} />
+            </div>
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#AAFFC7] bg-white/10 px-2.5 py-0.5 rounded-md border border-white/10">
-                Annual Institutional Upside
-              </span>
-              <p className="text-2xl sm:text-3xl font-extrabold text-white mt-2 tracking-tight">
-                {formatCurrency(totalEndowment)}
+              <h4 className="text-sm font-bold text-slate-900">
+                100% Direct Trust Settlement & Compliance
+              </h4>
+              <p className="text-xs text-slate-600">
+                All donations and CSR disbursements flow directly into your official Trust bank account with instant automated PDF receipts.
               </p>
-              <p className="text-xs text-slate-300 mt-0.5">Estimated Total Annual Philanthropy</p>
             </div>
-
-            <div className="space-y-3 pt-4 border-t border-white/10 text-xs">
-              <div className="flex justify-between items-center">
-                <span className="text-slate-300">Direct Alumni Giving:</span>
-                <span className="font-bold text-white">{formatCurrency(annualAlumniFund)}</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-300">Corporate CSR Referrals:</span>
-                <span className="font-bold text-[#AAFFC7]">{formatCurrency(csrPipeline)}</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-300">Section 80G Tax Exemption:</span>
-                <span className="font-bold text-emerald-400">100% Tax Deductible</span>
-              </div>
-            </div>
-
-            <a
-              href="#contact"
-              className="w-full block text-center py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all"
-            >
-              Unlock This Capital for Your Trust →
-            </a>
           </div>
+
+          <a
+            href="#contact"
+            className="w-full sm:w-auto text-xs font-bold text-white bg-[#0A1931] hover:bg-blue-700 px-5 py-3 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-1.5 shrink-0"
+          >
+            <span>Activate Giving Network</span>
+            <ArrowUpRight size={14} />
+          </a>
         </div>
       </div>
     </section>
   );
 }
+

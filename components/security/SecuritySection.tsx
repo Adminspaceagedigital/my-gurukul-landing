@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ShieldCheck, Lock, QrCode, Server, KeyRound, FileCheck } from 'lucide-react';
+import { ZoomableImage } from '@/components/ui/LightboxProvider';
 
 export default function SecuritySection() {
   const securityPoints = [
@@ -91,7 +92,7 @@ export default function SecuritySection() {
                 <div className="w-6" />
               </div>
               <div className="relative bg-slate-50 overflow-hidden">
-                <img
+                <ZoomableImage
                   src="/screenshots/superadmin/superadmin-2fa.png"
                   alt="Super Admin Two-Factor Authentication"
                   className="w-full h-auto object-cover object-top hover:scale-105 transition-transform duration-500"

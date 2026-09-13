@@ -13,6 +13,8 @@ import {
   Lock,
 } from 'lucide-react';
 
+import { ZoomableImage } from '@/components/ui/LightboxProvider';
+
 interface DesktopMockupProps {
   imageSrc?: string;
 }
@@ -33,7 +35,7 @@ export default function DesktopMockup({ imageSrc }: DesktopMockupProps) {
           </div>
           <div className="w-8" />
         </div>
-        <img
+        <ZoomableImage
           src={imageSrc}
           alt="Super Admin Command Center"
           className="w-full h-auto object-cover"
