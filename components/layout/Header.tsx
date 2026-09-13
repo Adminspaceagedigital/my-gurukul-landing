@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50/90 border border-emerald-200/80 px-2.5 py-1 rounded-lg backdrop-blur-xs">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-700 bg-emerald-50/90 border border-emerald-200/80 px-2.5 py-1 rounded-lg backdrop-blur-xs tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             LIVE NETWORK
           </span>

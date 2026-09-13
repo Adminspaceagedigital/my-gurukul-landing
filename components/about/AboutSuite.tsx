@@ -61,7 +61,7 @@ export default function AboutSuite() {
             <div className="bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white p-6 sm:p-7 rounded-2xl shadow-xl border border-slate-800 flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-[#AAFFC7] tracking-widest uppercase">
+                  <span className="text-[10px] font-bold text-[#AAFFC7] tracking-widest uppercase">
                     TIER 01 / TRUST
                   </span>
                   <div className="p-2 bg-white/10 rounded-lg text-white">
@@ -82,7 +82,7 @@ export default function AboutSuite() {
                     <div className="w-2 h-2 rounded-full bg-rose-400/80" />
                     <div className="w-2 h-2 rounded-full bg-amber-400/80" />
                     <div className="w-2 h-2 rounded-full bg-emerald-400/80" />
-                    <span className="text-[9px] font-mono text-slate-400 ml-1 truncate">Trust Governance & Schools</span>
+                    <span className="text-[9px] font-semibold text-slate-400 ml-1 truncate">Trust Governance & Schools</span>
                   </div>
                   <ZoomableImage
                     src="/screenshots/superadmin/superadmin-trust-data.png"
@@ -108,7 +108,7 @@ export default function AboutSuite() {
               </div>
 
               <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
-                <span className="font-mono">Route: /superadmin</span>
+                <span className="font-semibold">Route: /superadmin</span>
                 <span className="text-[#AAFFC7] font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Cockpit <ArrowUpRight size={12} />
                 </span>
@@ -119,7 +119,7 @@ export default function AboutSuite() {
             <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-emerald-700 tracking-widest uppercase">
+                  <span className="text-[10px] font-bold text-emerald-700 tracking-widest uppercase">
                     TIER 02 / CAMPUS
                   </span>
                   <div className="p-2 bg-emerald-50 text-emerald-700 rounded-lg">
@@ -140,7 +140,7 @@ export default function AboutSuite() {
                     <div className="w-2 h-2 rounded-full bg-rose-400/80" />
                     <div className="w-2 h-2 rounded-full bg-amber-400/80" />
                     <div className="w-2 h-2 rounded-full bg-emerald-400/80" />
-                    <span className="text-[9px] font-mono text-slate-500 ml-1 truncate">Student Academic Timeline</span>
+                    <span className="text-[9px] font-semibold text-slate-500 ml-1 truncate">Student Academic Timeline</span>
                   </div>
                   <ZoomableImage
                     src="/screenshots/subadmin/school-showing-student-timeline.png"
@@ -166,7 +166,7 @@ export default function AboutSuite() {
               </div>
 
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-                <span className="font-mono">Route: /subadmin</span>
+                <span className="font-semibold">Route: /subadmin</span>
                 <span className="text-emerald-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Campus <ArrowUpRight size={12} />
                 </span>
@@ -177,7 +177,7 @@ export default function AboutSuite() {
             <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-purple-700 tracking-widest uppercase">
+                  <span className="text-[10px] font-bold text-purple-700 tracking-widest uppercase">
                     TIER 03 / COMMUNITY
                   </span>
                   <div className="p-2 bg-purple-50 text-purple-700 rounded-lg">
@@ -246,7 +246,7 @@ export default function AboutSuite() {
               </div>
 
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-                <span className="font-mono">Route: /alumni</span>
+                <span className="font-semibold">Route: /alumni</span>
                 <span className="text-purple-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Portal <ArrowUpRight size={12} />
                 </span>
@@ -266,7 +266,7 @@ export default function AboutSuite() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-blue-700 bg-white border border-blue-200 px-2 py-0.5 rounded-md shadow-xs">
+                <span className="text-xs font-bold text-blue-700 bg-white border border-blue-200 px-2 py-0.5 rounded-md shadow-xs">
                   01
                 </span>
                 <h4 className="text-sm sm:text-base font-bold text-slate-900">100% Brand Sovereignty</h4>
@@ -278,7 +278,7 @@ export default function AboutSuite() {
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-emerald-700 bg-white border border-emerald-200 px-2 py-0.5 rounded-md shadow-xs">
+                <span className="text-xs font-bold text-emerald-700 bg-white border border-emerald-200 px-2 py-0.5 rounded-md shadow-xs">
                   02
                 </span>
                 <h4 className="text-sm sm:text-base font-bold text-slate-900">Automated Section 80G Tax Engine</h4>
@@ -290,7 +290,7 @@ export default function AboutSuite() {
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-purple-700 bg-white border border-purple-200 px-2 py-0.5 rounded-md shadow-xs">
+                <span className="text-xs font-bold text-purple-700 bg-white border border-purple-200 px-2 py-0.5 rounded-md shadow-xs">
                   03
                 </span>
                 <h4 className="text-sm sm:text-base font-bold text-slate-900">Unified 3-Tier Synergy</h4>
@@ -302,7 +302,7 @@ export default function AboutSuite() {
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-amber-700 bg-white border border-amber-200 px-2 py-0.5 rounded-md shadow-xs">
+                <span className="text-xs font-bold text-amber-700 bg-white border border-amber-200 px-2 py-0.5 rounded-md shadow-xs">
                   04
                 </span>
                 <h4 className="text-sm sm:text-base font-bold text-slate-900">Rapid 24-Hour Deployment</h4>

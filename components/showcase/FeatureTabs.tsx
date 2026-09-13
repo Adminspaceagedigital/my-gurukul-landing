@@ -108,7 +108,7 @@ export default function FeatureTabs() {
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
-                <span className={`text-[10px] font-mono ${isActive ? 'text-[#AAFFC7]' : 'text-slate-400'}`}>
+                <span className={`text-[10px] font-bold ${isActive ? 'text-[#AAFFC7]' : 'text-slate-400'}`}>
                   {item.num}
                 </span>
                 <span>{item.label}</span>
@@ -125,7 +125,7 @@ export default function FeatureTabs() {
           {/* Left: Challenge vs Overcomes */}
           <div className="lg:col-span-5 space-y-5 text-left">
             <div>
-              <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                 MODULE {current.num}
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight mt-1">
@@ -135,7 +135,7 @@ export default function FeatureTabs() {
 
             {/* The Challenge Box */}
             <div className="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
-              <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                 The Common Bottleneck
               </p>
@@ -146,7 +146,7 @@ export default function FeatureTabs() {
 
             {/* How It Overcomes Box */}
             <div className="p-3.5 sm:p-4 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-1.5">
-              <p className="text-[10px] font-mono font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+              <p className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 How My Gurukul Overcomes It
               </p>
