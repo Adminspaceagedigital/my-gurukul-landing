@@ -1,22 +1,31 @@
 'use client';
 
 import React, { useState } from 'react';
-import MentorshipCardMock from './MentorshipCardMock';
-import Donation80GMock from './Donation80GMock';
-import DirectoryMock from './DirectoryMock';
-import DesktopMockup from '../hero/DesktopMockup';
 import {
   Building2,
-  Users,
+  Camera,
   Heart,
   Search,
   ArrowUpRight,
+  Lock,
 } from 'lucide-react';
+
+interface FeatureItem {
+  id: string;
+  num: string;
+  label: string;
+  icon: React.ReactNode;
+  title: string;
+  challenge: string;
+  overcomes: string;
+  imageSrc: string;
+  urlLabel: string;
+}
 
 export default function FeatureTabs() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
-  const features = [
+  const features: FeatureItem[] = [
     {
       id: 'governance',
       num: '01',
@@ -25,37 +34,41 @@ export default function FeatureTabs() {
       title: 'Unified Trust Governance & Sub-Admin Delegation',
       challenge: 'Multi-school trusts struggle with fragmented spreadsheets, isolated school offices, and zero centralized financial audit trails.',
       overcomes: 'Provides a single sovereign Super Admin cockpit to govern all campuses, provision Sub-Admin accounts for principals, and monitor operations in real-time.',
-      component: <DesktopMockup />,
+      imageSrc: '/screenshots/superadmin/superadmin-dashboard.png',
+      urlLabel: 'portal.yourtrust.edu/superadmin/dashboard',
     },
     {
-      id: 'mentorship',
+      id: 'memories',
       num: '02',
-      label: 'Alumni Careers & Mentorship',
-      icon: <Users size={15} />,
-      title: 'LinkedIn-Style Alumni Career Network',
-      challenge: 'Graduates lose touch within 3 years, leaving institutions with dormant alumni rosters and students without senior career mentorship.',
-      overcomes: 'A thriving community where verified alumni post jobs, offer 1-on-1 guidance sessions, and hire junior graduates with 1-click profile applications.',
-      component: <MentorshipCardMock />,
+      label: 'Campus Memories & Events',
+      icon: <Camera size={15} />,
+      title: 'School Memories & Historical Event Gallery',
+      challenge: 'School memories, annual day victories, sports milestones, and nostalgic photo albums are lost over time across scattered personal drives.',
+      overcomes: 'A centralized memories hub with school and batch-year filters, high-resolution photo lightbox albums, and video highlights for lifelong engagement.',
+      imageSrc: '/screenshots/alumni/school-memorites-page.png',
+      urlLabel: 'portal.yourtrust.edu/alumni/dashboard?tab=memories',
     },
     {
       id: 'philanthropy',
       num: '03',
       label: 'Section 80G Philanthropy',
       icon: <Heart size={15} />,
-      title: 'Automated 80G Tax-Exempt Giving',
-      challenge: 'Donors hesitate due to slow offline processes, lack of cause transparency, and delayed tax-exemption receipts.',
+      title: 'Automated 80G Tax-Exempt Giving & Receipts',
+      challenge: 'Donors hesitate due to slow offline processes, lack of cause transparency, and delayed manual tax-exemption receipts.',
       overcomes: 'Enables direct digital giving for STEM labs, libraries, and scholarships with instant PAN verification and automated 80G tax certificates.',
-      component: <Donation80GMock />,
+      imageSrc: '/screenshots/alumni/till-now-alumni-donation-recipts-data.png',
+      urlLabel: 'portal.yourtrust.edu/alumni/dashboard?tab=impact',
     },
     {
       id: 'directory',
       num: '04',
-      label: 'Global Graduate Directory',
+      label: 'Global Alumni Directory',
       icon: <Search size={15} />,
-      title: 'Searchable Alumni Directory',
+      title: 'Searchable Alumni Directory & Networking',
       challenge: 'Alumni contact information is trapped in unorganized Excel sheets and disorganized WhatsApp groups.',
       overcomes: 'A searchable directory allowing graduates and trust leaders to find peers by passing batch, industry, company, or city across the globe.',
-      component: <DirectoryMock />,
+      imageSrc: '/screenshots/alumni/find-alumni-page.png',
+      urlLabel: 'portal.yourtrust.edu/alumni/dashboard?tab=find-alumni',
     },
   ];
 
@@ -146,7 +159,30 @@ export default function FeatureTabs() {
 
           {/* Right: Mockup Container */}
           <div className="lg:col-span-7">
-            {current.component}
+            <div className="bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden group">
+              <div className="bg-slate-100/90 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono text-slate-600 bg-white px-3 py-0.5 rounded-md border border-slate-200 shadow-xs max-w-[280px] sm:max-w-xs truncate">
+                  <Lock size={10} className="text-emerald-600 shrink-0" />
+                  <span>https://{current.urlLabel}</span>
+                </div>
+                <div className="flex items-center gap-1 text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Verified</span>
+                </div>
+              </div>
+              <div className="relative overflow-hidden bg-slate-50">
+                <img
+                  src={current.imageSrc}
+                  alt={current.title}
+                  className="w-full h-auto max-h-[480px] object-cover object-top hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

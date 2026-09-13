@@ -48,29 +48,57 @@ export default function SecuritySection() {
           </p>
         </div>
 
-        {/* Security Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {securityPoints.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all space-y-3 text-left"
-            >
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
-                  {item.icon}
+        {/* Security Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
+          {/* Left: 4 Security Cards (lg: 7 cols) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {securityPoints.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-slate-300 transition-all space-y-2.5 text-left"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 bg-slate-50 rounded-xl border border-slate-100">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">{item.title}</h4>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 leading-snug">{item.title}</h4>
+
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+
+                <div className="pt-2 border-t border-slate-100">
+                  <p className="text-[10.5px] text-slate-500">
+                    <strong className="text-slate-800 font-bold">Why Essential:</strong> {item.whyCrucial}
+                  </p>
+                </div>
               </div>
+            ))}
+          </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">{item.desc}</p>
-
-              <div className="pt-2.5 border-t border-slate-100">
-                <p className="text-[11px] text-slate-500">
-                  <strong className="text-slate-800 font-bold">Why Essential:</strong> {item.whyCrucial}
-                </p>
+          {/* Right: 2FA Authentication Visual Mockup (lg: 5 cols) */}
+          <div className="lg:col-span-5">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden group">
+              <div className="bg-slate-100/90 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                </div>
+                <div className="flex items-center gap-1 text-[10px] font-mono text-slate-600 bg-white px-2.5 py-0.5 rounded-md border border-slate-200 shadow-xs">
+                  <Lock size={10} className="text-emerald-600 shrink-0" />
+                  <span>Two-Factor Security Vault</span>
+                </div>
+                <div className="w-6" />
+              </div>
+              <div className="relative bg-slate-50 overflow-hidden">
+                <img
+                  src="/screenshots/superadmin/superadmin-2fa.png"
+                  alt="Super Admin Two-Factor Authentication"
+                  className="w-full h-auto object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

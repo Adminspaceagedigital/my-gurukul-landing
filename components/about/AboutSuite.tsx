@@ -63,7 +63,7 @@ export default function AboutSuite() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
             {/* Tier 1: Super Admin */}
-            <div className="bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white p-7 rounded-xl shadow-xl border border-slate-800 flex flex-col justify-between space-y-6 group">
+            <div className="bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white p-6 sm:p-7 rounded-2xl shadow-xl border border-slate-800 flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-[#AAFFC7] tracking-widest uppercase">
@@ -76,12 +76,27 @@ export default function AboutSuite() {
 
                 <div>
                   <h4 className="text-lg font-bold text-white">Super Admin Tier</h4>
-                  <p className="text-xs text-slate-300 font-medium mt-1">
+                  <p className="text-xs text-slate-300 font-medium mt-0.5">
                     For Trust Trustees, Chancellors & Board Members
                   </p>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-300">
+                {/* Screenshot Preview */}
+                <div className="relative rounded-xl overflow-hidden border border-white/15 bg-slate-900 shadow-md group-hover:border-emerald-400/40 transition-colors">
+                  <div className="bg-slate-900 px-3 py-1.5 border-b border-white/10 flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-rose-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-amber-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[9px] font-mono text-slate-400 ml-1 truncate">Trust Governance & Schools</span>
+                  </div>
+                  <img
+                    src="/screenshots/superadmin/superadmin-trust-data.png"
+                    alt="Super Admin Trust Governance"
+                    className="w-full h-44 object-cover object-top hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <ul className="space-y-2 text-xs text-slate-300 pt-1">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
                     <span>Multi-trust & multi-school provisioning</span>
@@ -94,14 +109,10 @@ export default function AboutSuite() {
                     <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
                     <span>Trust-wide Section 80G tax exemption approval</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
-                    <span>Real-time security audit telemetry & event logs</span>
-                  </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
                 <span className="font-mono">Route: /superadmin</span>
                 <span className="text-[#AAFFC7] font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Cockpit <ArrowUpRight size={12} />
@@ -110,7 +121,7 @@ export default function AboutSuite() {
             </div>
 
             {/* Tier 2: Sub-Admin */}
-            <div className="bg-white p-7 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 group">
+            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-emerald-700 tracking-widest uppercase">
@@ -123,12 +134,27 @@ export default function AboutSuite() {
 
                 <div>
                   <h4 className="text-lg font-bold text-slate-900">Sub-Admin Tier</h4>
-                  <p className="text-xs text-slate-500 font-medium mt-1">
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">
                     For Principals, Deans & Campus Administrative Officers
                   </p>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-700">
+                {/* Screenshot Preview */}
+                <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-xs group-hover:border-emerald-300 transition-colors">
+                  <div className="bg-slate-100 px-3 py-1.5 border-b border-slate-200 flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-rose-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-amber-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[9px] font-mono text-slate-500 ml-1 truncate">Student Academic Timeline</span>
+                  </div>
+                  <img
+                    src="/screenshots/subadmin/school-showing-student-timeline.png"
+                    alt="School Operations Student Timeline"
+                    className="w-full h-44 object-cover object-top hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <ul className="space-y-2 text-xs text-slate-700 pt-1">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
                     <span>Manage academic cycles & term calendars</span>
@@ -139,16 +165,12 @@ export default function AboutSuite() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Broadcast Google Meet alumni reunions & webinars</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Official campus announcements & news releases</span>
+                    <span>Batch graduation & automated alumni conversion</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
                 <span className="font-mono">Route: /subadmin</span>
                 <span className="text-emerald-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Campus <ArrowUpRight size={12} />
@@ -157,7 +179,7 @@ export default function AboutSuite() {
             </div>
 
             {/* Tier 3: Alumni */}
-            <div className="bg-white p-7 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 group">
+            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5 group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-purple-700 tracking-widest uppercase">
@@ -170,32 +192,43 @@ export default function AboutSuite() {
 
                 <div>
                   <h4 className="text-lg font-bold text-slate-900">Alumni Tier</h4>
-                  <p className="text-xs text-slate-500 font-medium mt-1">
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">
                     For Verified Graduates, Mentors & Corporate Donors
                   </p>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-700">
+                {/* Screenshot Preview */}
+                <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-xs group-hover:border-purple-300 transition-colors">
+                  <div className="bg-slate-100 px-3 py-1.5 border-b border-slate-200 flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-rose-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-amber-400/80" />
+                    <div className="w-2 h-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[9px] font-mono text-slate-500 ml-1 truncate">Live Community Feed</span>
+                  </div>
+                  <img
+                    src="/screenshots/alumni/alumni-community-feed.png"
+                    alt="Alumni Community Feed"
+                    className="w-full h-44 object-cover object-top hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <ul className="space-y-2 text-xs text-slate-700 pt-1">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>LinkedIn-style career feed for jobs & achievements</span>
+                    <span>LinkedIn-style career feed for jobs & mentorship</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>1-on-1 mentorship bookings with auto-prefilled form</span>
+                    <span>School Memories & historical event galleries</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
                     <span>Instant Section 80G tax-exempt cause donations</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>Filterable directory across company, batch & city</span>
-                  </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
                 <span className="font-mono">Route: /alumni</span>
                 <span className="text-purple-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
                   Portal <ArrowUpRight size={12} />

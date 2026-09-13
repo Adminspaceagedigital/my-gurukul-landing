@@ -74,12 +74,12 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             {/* Desktop Mockup (Super Admin Cockpit) */}
             <div className="lg:col-span-8">
-              <DesktopMockup />
+              <DesktopMockup imageSrc="/screenshots/superadmin/superadmin-dashboard.png" />
             </div>
 
             {/* Mobile Mockup (Alumni Mobile Feed) */}
             <div className="lg:col-span-4 flex justify-center">
-              <MobileMockup />
+              <MobileMockup imageSrc="/screenshots/alumni/alumni-dashboard-1.png" />
             </div>
           </div>
         </div>
