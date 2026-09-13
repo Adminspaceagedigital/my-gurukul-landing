@@ -62,12 +62,8 @@ export default function Header() {
 
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-700 bg-emerald-50/90 border border-emerald-200/80 px-2.5 py-1 rounded-lg backdrop-blur-xs tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            LIVE NETWORK
-          </span>
           <a
-            href="#contact"
+            href="/#contact"
             className="text-xs font-bold text-white bg-[#0A1931] hover:bg-blue-700 px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 group"
           >
             <span>Request Demo</span>
