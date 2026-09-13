@@ -2,261 +2,266 @@
 
 import React from 'react';
 import {
-  ShieldCheck,
-  Target,
-  Sparkles,
   Building2,
   School,
   GraduationCap,
   Globe,
   FileCheck2,
   Layers,
-  ArrowRight,
-  CheckCircle2,
   Zap,
+  CheckCircle2,
+  ArrowUpRight,
+  ShieldCheck,
 } from 'lucide-react';
 
 export default function AboutSuite() {
   return (
-    <section id="about" className="py-20 bg-white/90 border-t border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* 1. Who We Are */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-5 space-y-4 text-left">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-lg">
-              Who We Are
+    <section id="about" className="py-24 bg-white border-y border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        {/* 1. Who We Are: Editorial Split Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-4 space-y-3 text-left">
+            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-blue-700 uppercase bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-md">
+              02 // WHO WE ARE
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              The Digital Backbone for India's Educational Trusts
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              The Sovereign Digital Infrastructure for Educational Trusts.
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-              <strong>My Gurukul</strong> is a sovereign institutional platform engineered specifically to bridge the gap between educational trust governance, campus administration, and lifelong alumni communities.
-            </p>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-              We empower trusts to operate their own self-funded, digitally connected network without relying on fragmented spreadsheets or third-party portals.
-            </p>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-            <div className="p-5 bg-gradient-to-br from-blue-50/60 to-slate-50 rounded-xl border border-blue-100 space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
-                <Target size={16} />
-              </div>
-              <h4 className="text-sm font-bold text-slate-900">Our Mission</h4>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                To transform every educational trust into a self-sustaining, globally connected power center driven by active alumni philanthropy and mentorship.
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left border-t lg:border-t-0 lg:border-l border-slate-200 pt-6 lg:pt-0 lg:pl-8">
+            <div className="space-y-2">
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Institutional Heritage</h4>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Educational Trusts and Universities represent decades of academic prestige. <strong>My Gurukul</strong> protects this legacy by replacing third-party dependencies with a fully branded digital command center.
               </p>
             </div>
-
-            <div className="p-5 bg-gradient-to-br from-emerald-50/60 to-slate-50 rounded-xl border border-emerald-100 space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
-                <ShieldCheck size={16} />
-              </div>
-              <h4 className="text-sm font-bold text-slate-900">Our Standard</h4>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Bank-grade security, 100% brand sovereignty on your own domain, and zero-compromise Indian Section 80G tax exemption compliance.
+            <div className="space-y-2">
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Lifelong Ecosystem</h4>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                From kindergarten enrollment to senior alumni career mentorship and corporate CSR endowment funds, we unify all stakeholders into one real-time operational layer.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2. What We Do: The 3-Tier Architecture */}
-        <div className="space-y-8 text-center">
-          <div className="max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-purple-700 bg-purple-50 border border-purple-200 px-3 py-1 rounded-lg">
-              What We Do
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              A Unified 3-Tier Architecture
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">
-              Seamlessly synchronizing Trustees, Campus Principals, and Alumni in one sovereign ecosystem.
+        {/* 2. What We Do: The 3-Tier Architecture Bento Grid */}
+        <div className="space-y-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left border-b border-slate-200 pb-4">
+            <div>
+              <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-purple-700 uppercase">
+                03 // WHAT WE DO
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                The 3-Tier Multi-Tenant Ecosystem
+              </h3>
+            </div>
+            <p className="text-xs text-slate-500 font-medium max-w-md">
+              Synchronizing Trustees, School Principals, and Alumni into one cohesive digital infrastructure.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
-            {/* Super Admin Tier */}
-            <div className="p-6 bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white rounded-xl shadow-lg border border-slate-800 space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
+            {/* Tier 1: Super Admin */}
+            <div className="bg-gradient-to-br from-[#0B1525] to-[#162A45] text-white p-7 rounded-xl shadow-xl border border-slate-800 flex flex-col justify-between space-y-6 group">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-2 bg-white/10 rounded-lg text-blue-300">
+                  <span className="text-[10px] font-mono font-bold text-[#AAFFC7] tracking-widest uppercase">
+                    TIER 01 / TRUST
+                  </span>
+                  <div className="p-2 bg-white/10 rounded-lg text-white">
                     <Building2 size={18} />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#AAFFC7] bg-white/10 px-2 py-0.5 rounded border border-white/10">
-                    Trust Level
-                  </span>
                 </div>
+
                 <div>
-                  <h4 className="text-base font-bold text-white">Super Admin Tier</h4>
-                  <p className="text-[11px] text-slate-300 font-medium mt-0.5">
-                    For Trust Trustees & Chancellors
+                  <h4 className="text-lg font-bold text-white">Super Admin Tier</h4>
+                  <p className="text-xs text-slate-300 font-medium mt-1">
+                    For Trust Trustees, Chancellors & Board Members
                   </p>
                 </div>
-                <ul className="space-y-2 text-xs text-slate-300">
+
+                <ul className="space-y-2.5 text-xs text-slate-300">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-[#AAFFC7] shrink-0 mt-0.5" />
+                    <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
                     <span>Multi-trust & multi-school provisioning</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-[#AAFFC7] shrink-0 mt-0.5" />
-                    <span>Sub-Admin account delegation & access control</span>
+                    <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
+                    <span>Sub-Admin delegation & role access controls</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-[#AAFFC7] shrink-0 mt-0.5" />
-                    <span>Trust-wide 80G tax exemption approval ledger</span>
+                    <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
+                    <span>Trust-wide Section 80G tax exemption approval</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-[#AAFFC7] shrink-0 mt-0.5" />
-                    <span>Live security audit telemetry and monitoring</span>
+                    <CheckCircle2 size={14} className="text-[#AAFFC7] shrink-0 mt-0.5" />
+                    <span>Real-time security audit telemetry & event logs</span>
                   </li>
                 </ul>
               </div>
-              <div className="pt-3 border-t border-white/10">
-                <p className="text-[10px] text-slate-400 font-mono">Cockpit: /superadmin/dashboard</p>
+
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                <span className="font-mono">Route: /superadmin</span>
+                <span className="text-[#AAFFC7] font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
+                  Cockpit <ArrowUpRight size={12} />
+                </span>
               </div>
             </div>
 
-            {/* Sub-Admin Tier */}
-            <div className="p-6 bg-white rounded-xl border border-emerald-200 shadow-sm space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
+            {/* Tier 2: Sub-Admin */}
+            <div className="bg-white p-7 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 group">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-2 bg-emerald-50 rounded-lg text-emerald-700">
+                  <span className="text-[10px] font-mono font-bold text-emerald-700 tracking-widest uppercase">
+                    TIER 02 / CAMPUS
+                  </span>
+                  <div className="p-2 bg-emerald-50 text-emerald-700 rounded-lg">
                     <School size={18} />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    Campus Level
-                  </span>
                 </div>
+
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">Sub-Admin Tier</h4>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">
-                    For Principals, Deans & Campus Officers
+                  <h4 className="text-lg font-bold text-slate-900">Sub-Admin Tier</h4>
+                  <p className="text-xs text-slate-500 font-medium mt-1">
+                    For Principals, Deans & Campus Administrative Officers
                   </p>
                 </div>
-                <ul className="space-y-2 text-xs text-slate-700">
+
+                <ul className="space-y-2.5 text-xs text-slate-700">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
                     <span>Manage academic cycles & term calendars</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Student batch records & merit rank topper lists</span>
+                    <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Student batch records & merit topper ranks</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Broadcast Google Meet alumni reunion invites</span>
+                    <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Broadcast Google Meet alumni reunions & webinars</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Post official campus news & academic updates</span>
+                    <CheckCircle2 size={14} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Official campus announcements & news releases</span>
                   </li>
                 </ul>
               </div>
-              <div className="pt-3 border-t border-slate-100">
-                <p className="text-[10px] text-slate-400 font-mono">Cockpit: /subadmin/dashboard</p>
+
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                <span className="font-mono">Route: /subadmin</span>
+                <span className="text-emerald-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
+                  Campus <ArrowUpRight size={12} />
+                </span>
               </div>
             </div>
 
-            {/* Alumni Tier */}
-            <div className="p-6 bg-white rounded-xl border border-purple-200 shadow-sm space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
+            {/* Tier 3: Alumni */}
+            <div className="bg-white p-7 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 group">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-2 bg-purple-50 rounded-lg text-purple-700">
+                  <span className="text-[10px] font-mono font-bold text-purple-700 tracking-widest uppercase">
+                    TIER 03 / COMMUNITY
+                  </span>
+                  <div className="p-2 bg-purple-50 text-purple-700 rounded-lg">
                     <GraduationCap size={18} />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
-                    Community Level
-                  </span>
                 </div>
+
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">Alumni Tier</h4>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">
-                    For Verified Graduates & Corporate Patrons
+                  <h4 className="text-lg font-bold text-slate-900">Alumni Tier</h4>
+                  <p className="text-xs text-slate-500 font-medium mt-1">
+                    For Verified Graduates, Mentors & Corporate Donors
                   </p>
                 </div>
-                <ul className="space-y-2 text-xs text-slate-700">
+
+                <ul className="space-y-2.5 text-xs text-slate-700">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>LinkedIn-style community feed for jobs & updates</span>
+                    <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
+                    <span>LinkedIn-style career feed for jobs & achievements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>Book 1-on-1 mentorship with junior students</span>
+                    <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
+                    <span>1-on-1 mentorship bookings with auto-prefilled form</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>Instant 80G tax-exempt donations to school causes</span>
+                    <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
+                    <span>Instant Section 80G tax-exempt cause donations</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-purple-600 shrink-0 mt-0.5" />
-                    <span>Searchable directory by company, industry & city</span>
+                    <CheckCircle2 size={14} className="text-purple-600 shrink-0 mt-0.5" />
+                    <span>Filterable directory across company, batch & city</span>
                   </li>
                 </ul>
               </div>
-              <div className="pt-3 border-t border-slate-100">
-                <p className="text-[10px] text-slate-400 font-mono">Portal: /alumni/dashboard</p>
+
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                <span className="font-mono">Route: /alumni</span>
+                <span className="text-purple-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
+                  Portal <ArrowUpRight size={12} />
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 3. Why We Are Unique (Our Moat) */}
-        <div className="bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/20 p-8 sm:p-10 rounded-xl border border-slate-200 space-y-8 text-left">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-lg">
-              Why We Are Unique
+        {/* 3. Why We Are Unique: 4 Numbered Engineering Moats */}
+        <div className="bg-gradient-to-br from-slate-50 via-sky-50/20 to-blue-50/30 p-8 sm:p-12 rounded-xl border border-slate-200 text-left space-y-8">
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-emerald-800 uppercase bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md">
+              04 // WHY WE ARE UNIQUE
             </span>
-            <h3 className="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              4 Reasons Why Institutions Choose My Gurukul
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              4 Structural Advantages Built for Education Leaders
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-blue-100 text-blue-800 rounded-lg">
-                  <Globe size={16} />
-                </div>
-                <h4 className="text-sm font-bold text-slate-900">100% Brand Sovereignty</h4>
+                <span className="text-xs font-mono font-bold text-blue-700 bg-white border border-blue-200 px-2 py-0.5 rounded-md shadow-xs">
+                  01
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-slate-900">100% Brand Sovereignty</h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                No third-party logos or shared generic portals. Your system runs directly on your official domain (e.g. <strong className="text-slate-800">portal.yourtrust.edu</strong>) with auto-renewing SSL.
+                No third-party branding or external portal redirections. Your ecosystem operates under your official institution domain (e.g. <strong className="text-slate-800">portal.yourtrust.edu</strong>) with automated SSL.
               </p>
             </div>
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-emerald-100 text-emerald-800 rounded-lg">
-                  <FileCheck2 size={16} />
-                </div>
-                <h4 className="text-sm font-bold text-slate-900">Automated Section 80G Tax Engine</h4>
+                <span className="text-xs font-mono font-bold text-emerald-700 bg-white border border-emerald-200 px-2 py-0.5 rounded-md shadow-xs">
+                  02
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-slate-900">Automated Section 80G Tax Engine</h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Instant donor PAN validation, Razorpay/UPI gateway integration, and immediate dispatch of digitally signed 80G tax exemption certificates to donors.
+                Instant donor PAN validation, Razorpay/UPI integration, and instant generation and email dispatch of digitally signed Indian 80G tax exemption certificates.
               </p>
             </div>
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-purple-100 text-purple-800 rounded-lg">
-                  <Layers size={16} />
-                </div>
-                <h4 className="text-sm font-bold text-slate-900">Unified 3-Tier Synergy</h4>
+                <span className="text-xs font-mono font-bold text-purple-700 bg-white border border-purple-200 px-2 py-0.5 rounded-md shadow-xs">
+                  03
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-slate-900">Unified 3-Tier Synergy</h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Unlike fragmented single-purpose apps, My Gurukul connects Super Admin trustees, Sub-Admin campus principals, and Alumni in one real-time data layer.
+                Instead of 4 disconnected tools for administration, alumni, donations, and communication, My Gurukul runs a unified, real-time database across all campuses.
               </p>
             </div>
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-amber-100 text-amber-800 rounded-lg">
-                  <Zap size={16} />
-                </div>
-                <h4 className="text-sm font-bold text-slate-900">Rapid 24-Hour Deployment</h4>
+                <span className="text-xs font-mono font-bold text-amber-700 bg-white border border-amber-200 px-2 py-0.5 rounded-md shadow-xs">
+                  04
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-slate-900">Rapid 24-Hour Deployment</h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Zero server configuration, zero lengthy developer retainers. Your multi-campus network can be completely live and operational in less than 24 hours.
+                Zero infrastructure headaches or lengthy 6-month development cycles. Your entire multi-campus trust network can be live and active in under 24 hours.
               </p>
             </div>
           </div>
