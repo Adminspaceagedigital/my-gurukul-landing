@@ -45,7 +45,8 @@ import {
   UserCog,
   DollarSign,
   Send,
-  HelpCircle
+  HelpCircle,
+  Bell
 } from 'lucide-react';
 import { LightboxProvider, ZoomableImage } from '@/components/ui/LightboxProvider';
 
@@ -147,7 +148,7 @@ export default function DocumentationPage() {
       title: 'API Documentation',
       subPages: [
         { id: 'webhooks-payments', title: 'Razorpay / UPI Webhooks' },
-        { id: 'student-sync-api', title: 'ERP Student Sync API' },
+        { id: 'student-sync-api', title: 'Student Batch Ingestion API' },
       ],
     },
     { id: 'glossary', title: 'Glossary' },
@@ -220,7 +221,7 @@ export default function DocumentationPage() {
     'graduation-alumni': [
       { id: 'batch-graduation-workflow', title: '1-Click Batch Graduation' },
       { id: 'automated-alumni-creation', title: 'Automated Alumni Accounts' },
-      { id: 'activation-invites', title: 'WhatsApp & Email Invites' },
+      { id: 'activation-invites', title: 'Email & Push Notifications' },
     ],
     'events-memories': [
       { id: 'nostalgic-photo-archive', title: 'School Memory Gallery' },
@@ -229,7 +230,7 @@ export default function DocumentationPage() {
     ],
     'alumni-login': [
       { id: 'verification-methods', title: 'Roll Number Matching' },
-      { id: 'zero-password-flow', title: 'Magic Link & OTP' },
+      { id: 'zero-password-flow', title: 'Email OTP & Direct Login' },
       { id: 'profile-enrichment', title: 'Career & Industry Setup' },
     ],
     'social-jobs': [
@@ -238,9 +239,9 @@ export default function DocumentationPage() {
       { id: 'company-tagging', title: 'Corporate Network Tagging' },
     ],
     'mentorship': [
-      { id: 'mentorship-booking', title: '1-on-1 Mentorship Booking' },
-      { id: 'domain-focus-tracks', title: 'Career Focus Tracks' },
-      { id: 'video-scheduling', title: 'Video Session Setup' },
+      { id: 'mentorship-hub', title: 'Mentorship Opportunities Hub' },
+      { id: 'domain-focus-tracks', title: 'Professional Categories' },
+      { id: 'student-registration', title: 'Student Connection Workflow' },
     ],
     'donations-80g': [
       { id: 'cause-campaign-giving', title: 'Targeted Cause Campaigns' },
@@ -268,9 +269,9 @@ export default function DocumentationPage() {
       { id: 'idempotent-handling', title: 'Idempotency Rules' },
     ],
     'student-sync-api': [
-      { id: 'erp-sync-endpoint', title: 'ERP Student Sync API' },
-      { id: 'bearer-authentication', title: 'API Key Authentication' },
-      { id: 'sync-json-schema', title: 'Batch Sync Payload' },
+      { id: 'batch-api-endpoint', title: 'Student Ingestion Endpoint' },
+      { id: 'bearer-authentication', title: 'Session Authentication' },
+      { id: 'sync-json-schema', title: 'Batch Upload Schema' },
     ],
     glossary: [
       { id: 'tax-terms', title: 'Tax & Compliance Terms' },
@@ -467,7 +468,7 @@ export default function DocumentationPage() {
                     Overview of My Gurukul Platform
                   </h1>
                   <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
-                    My Gurukul is a sovereign SaaS operating system purpose-built for Educational Trusts, Group of Schools, and Multi-Campus Universities. It decouples institutional governance across three isolated tiers to ensure complete brand sovereignty, seamless principal delegation, and automated Section 80G philanthropic endowments.
+                    My Gurukul is a sovereign SaaS operating system purpose-built for Educational Trusts, Group of Schools, and Multi-Campus Institutions. It decouples institutional governance across three isolated tiers to ensure complete brand sovereignty, seamless principal delegation, and automated Section 80G philanthropic endowments.
                   </p>
                 </div>
 
@@ -1039,7 +1040,7 @@ export default function DocumentationPage() {
                 <section id="email-audit-stream" className="space-y-3 scroll-mt-24">
                   <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Email Delivery & Communication Audit</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Tracks the delivery state (<code className="text-emerald-600 font-bold">SENT</code>, <code className="text-amber-600 font-bold">SKIPPED</code>, <code className="text-red-600 font-bold">FAILED</code>) of all system notifications, alumni verification links, and 80G tax receipts.
+                    Tracks the delivery state (<code className="text-emerald-600 font-bold">SENT</code>, <code className="text-amber-600 font-bold">SKIPPED</code>, <code className="text-red-600 font-bold">FAILED</code>) of all system notifications, alumni verification links, and 80G tax receipts via <code className="bg-slate-100 px-1 py-0.5 rounded text-[#0066FF]">EmailLog</code>.
                   </p>
                 </section>
 
@@ -1225,9 +1226,9 @@ export default function DocumentationPage() {
                 </section>
 
                 <section id="activation-invites" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Multi-Channel Activation Broadcasts</h2>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Automated Email & Push Notification Broadcasts</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Automated welcome messages are dispatched via WhatsApp and Email with personalized 1-click onboarding links, giving graduates immediate access to their mobile alumni hub.
+                    Automated welcome notices and activation links are dispatched via the transactional email engine (Brevo/Resend) and Firebase Cloud Messaging (FCM) web push notifications, providing graduates immediate access to their mobile alumni hub.
                   </p>
                 </section>
 
@@ -1320,21 +1321,21 @@ export default function DocumentationPage() {
                     1-Click Verification & Frictionless Onboarding
                   </h1>
                   <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-                    Alumni onboarding requires zero tedious paperwork. Verification is instant using historical school roll numbers or registered student emails.
+                    Alumni onboarding requires zero tedious paperwork. Verification is instant using historical school roll numbers and registered student emails.
                   </p>
                 </div>
 
                 <section id="verification-methods" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. Roll Number & Email Verification</h2>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. Roll Number & School Verification</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Alumni enter their School Name, Admission Roll Number, and Birthdate. The system instantly cross-references the historical school database and binds their alumni account.
+                    Alumni enter their School Name, Admission Roll Number, and Email. The system instantly cross-references the historical school student database and activates their verified alumni profile.
                   </p>
                 </section>
 
                 <section id="zero-password-flow" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Zero-Password Magic Link Login</h2>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Direct Email OTP & Passwordless Login</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Alumni can authenticate via 6-digit WhatsApp/Email OTPs or cryptographic magic links for an instant, frictionless mobile login experience.
+                    Alumni authenticate via 6-digit secure Email OTPs or their registered password for an instant, frictionless mobile login experience.
                   </p>
                 </section>
 
@@ -1430,33 +1431,35 @@ export default function DocumentationPage() {
                     1-on-1 Student Mentorship & Career Guidance
                   </h1>
                   <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-                    Connect current students and recent graduates with seasoned alumni mentors across various professional fields.
+                    Connect current students and recent graduates with seasoned alumni mentors across various professional fields using the built-in Alumni Mentorship Hub.
                   </p>
                 </div>
 
-                <section id="mentorship-booking" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. Mentorship Booking Flow</h2>
+                <section id="mentorship-hub" className="space-y-3 scroll-mt-24">
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. Mentorship Opportunity Hub</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Alumni mentors define their available time slots and focus areas. Students book sessions directly with automatic calendar notifications.
+                    Alumni mentors post guidance offerings specifying their background, availability hours, and target student cohorts (e.g., 10th/12th grade or recent college grads).
                   </p>
                 </section>
 
                 <section id="domain-focus-tracks" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Domain Focus Tracks</h2>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Software Engineering</div>
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Medical & Healthcare</div>
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Chartered Accountancy</div>
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Civil Services / UPSC</div>
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Study Abroad & GRE</div>
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">Entrepreneurship</div>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Professional Categories</h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Engineering & Tech</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Business & Finance</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Healthcare & Medicine</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Law & Public Policy</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Arts & Design</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Education & Academics</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Sales & Marketing</div>
+                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg font-medium">Competitive Exams</div>
                   </div>
                 </section>
 
-                <section id="video-scheduling" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Video Session Scheduling</h2>
+                <section id="student-registration" className="space-y-3 scroll-mt-24">
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Student Registration & Connection Workflow</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Integrates with Google Meet and Zoom for zero-hassle 1-on-1 video guidance with verified school safety parameters.
+                    Students click <strong>Register for Guidance</strong> to submit their contact details, questions, and goals. Mentors receive instant email notifications and connect directly to guide the student.
                   </p>
                 </section>
 
@@ -1766,32 +1769,33 @@ USING ("schoolId" = current_setting('app.current_school_id'));`}
               </article>
             )}
 
-            {/* ── ARTICLE: API - STUDENT SYNC ERP ── */}
+            {/* ── ARTICLE: API - STUDENT BATCH INGESTION ── */}
             {activeCategory === 'student-sync-api' && (
               <article className="space-y-8 max-w-3xl">
                 <div>
                   <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight font-jakarta">
-                    School ERP Student Synchronization REST API
+                    Student Roster Batch Ingestion & Sync API
                   </h1>
                   <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-                    Connect external school management software (Fedena, Vidyalaya, Blackboard, Powerschool) to automatically synchronize active student and alumni records.
+                    Programmatic batch ingestion endpoint used by institutional database administrators to import student records and batch rosters directly into school nodes.
                   </p>
                 </div>
 
-                <section id="erp-sync-endpoint" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. REST Endpoint: Batch Student Upsert</h2>
+                <section id="batch-api-endpoint" className="space-y-3 scroll-mt-24">
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">1. API Endpoint: Student Batch Upload</h2>
                   <div className="bg-slate-900 text-slate-100 p-4 rounded-xl font-mono text-xs space-y-2">
                     <div className="text-slate-400 pb-2 border-b border-slate-800">
-                      POST /api/v1/schools/{'{schoolId}'}/students/sync
+                      POST /api/subadmin/students/import
                     </div>
                     <pre className="text-emerald-400">
 {`{
+  "schoolId": "school_982631",
   "students": [
     {
       "admissionNo": "ADM-2024-0091",
-      "firstName": "Zahid",
-      "lastName": "Qureshi",
-      "email": "zahid@institution.edu",
+      "firstName": "Aarav",
+      "lastName": "Sharma",
+      "email": "aarav@institution.edu",
       "standard": 10,
       "division": "A",
       "academicYear": "2024-2025"
@@ -1803,18 +1807,19 @@ USING ("schoolId" = current_setting('app.current_school_id'));`}
                 </section>
 
                 <section id="bearer-authentication" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Bearer Token Authentication</h2>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">2. Authenticated Session Security</h2>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Authorize requests using your institutional API key passed in the <code className="bg-slate-100 px-1 py-0.5 rounded font-mono">Authorization: Bearer {'<API_KEY>'}</code> header.
+                    Protected by HTTP-only secure cookie session tokens with strict campus-level sub-admin verification.
                   </p>
                 </section>
 
                 <section id="sync-json-schema" className="space-y-3 scroll-mt-24">
-                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Response Format</h2>
+                  <h2 className="text-lg font-bold text-slate-900 font-jakarta">3. Response & Ingestion Report</h2>
                   <div className="bg-slate-900 text-slate-100 p-3 rounded-lg font-mono text-xs text-sky-300">
 {`{
   "status": "success",
-  "syncedCount": 1,
+  "inserted": 45,
+  "duplicatesSkipped": 0,
   "errors": []
 }`}
                   </div>
@@ -1823,12 +1828,12 @@ USING ("schoolId" = current_setting('app.current_school_id'));`}
                 <div className="rounded-xl overflow-hidden border border-slate-200 shadow-md">
                   <ZoomableImage
                     src="/screenshots/subadmin/school-sees-students-according-to-standards.png"
-                    alt="ERP Synchronized Student Roster"
+                    alt="Synchronized Student Roster"
                     className="w-full h-auto object-cover"
                   />
                 </div>
                 <p className="text-xs text-slate-400 italic text-center">
-                  Figure: Real-time ERP Student Synchronization by Academic Standard.
+                  Figure: Real-time Student Roster Breakdown by Academic Standard.
                 </p>
               </article>
             )}
